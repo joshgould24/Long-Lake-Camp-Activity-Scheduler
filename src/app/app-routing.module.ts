@@ -4,12 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'scheduler',//redirects user to scheduler page by default
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'loading-page',
+    loadChildren: () => import('./pages/loading-page/loading-page.module').then( m => m.LoadingPagePageModule)
+  },
+  {
+    path: 'scheduler',
+    loadChildren: () => import('./pages/scheduler/scheduler.module').then( m => m.SchedulerPageModule)
+  },
+  {
+    path: 'export',
+    loadChildren: () => import('./pages/export/export.module').then( m => m.ExportPageModule)
   }
 ];
 
