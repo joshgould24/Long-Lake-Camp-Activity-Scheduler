@@ -18,13 +18,15 @@
           <!-- Camp selector -->
           <ion-item>
             <ion-label>Select camp</ion-label>
-              <ion-select ok-text="Okay" cancel-text="Nah">
+              <ion-select id="camp_selector" name="camp selector" ok-text="Okay" cancel-text="Nah" (ionChange)="updateScheduler()">
+                #campSelect
+                (change)='onOptionsSelected(campSelect.value)'
                 <ion-select-option value="art">Arts</ion-select-option>
                 <ion-select-option value="adventure">Adventure</ion-select-option>
               </ion-select>
           </ion-item>
+          
         </ion-list>
-
         <p style="position: fixed; bottom: 0; color:grey;">Designed and developed by Joshua Gould</p>
       </ion-content>
     </ion-menu>

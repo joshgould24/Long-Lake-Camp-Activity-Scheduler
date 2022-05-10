@@ -1,17 +1,19 @@
+<script type="text/typescript" src="src/app/app.component.ts"></script>
+
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-icon src="/src/assets/icon6.png"></ion-icon>
+      <ion-icon src="src/assets/icon6.png"></ion-icon>
     </ion-buttons>
     <ion-title>Activity Scheduler</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p class="flex-center">Good morning camper!</p>
+  <p class="flex-center">{{topText}}</p>
 
   <ion-list>
     <!-- Period 1 -->
@@ -132,9 +134,17 @@
         <ion-label><i>Dinner</i></ion-label>
       </div>
     </ion-item>
+
+    <!-- <ion-item>
+      <button onclick="console.log(SchedulerPage.hi())">Sample Text</button>
+    </ion-item> -->
   </ion-list>
 
+  <br>
 
+  <ion-button (click)="save()" expand="block"><ion-icon slot="start" name="save"></ion-icon>Save</ion-button>
+  <ion-button (click)="recover()" expand="block"><ion-icon slot="start" name="home"></ion-icon>Recover</ion-button>
+  
 
-  <p>Pick your daily schedule here and press submit. I'll remember it for you!</p>
+  <p>Pick your daily schedule here and press save. I'll remember it for you!</p>
 </ion-content>
