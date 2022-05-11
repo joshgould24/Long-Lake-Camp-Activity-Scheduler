@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SchedulerPage } from "src/app/pages/scheduler/scheduler.page";
-import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';//allows us to save variables to storage
+import { Storage } from '@capacitor/storage';//allows us to save variables to storage
 
 
 @Component({
@@ -20,7 +20,7 @@ export class AppComponent {
     { title: 'Export data', url: '/export', icon: 'analytics' }
   ];
   
-  constructor(private nativeStorage: NativeStorage) {  }
+  constructor() {  }
 
   updateScheduler(){
     console.log("updateScheduler method:");
