@@ -19,7 +19,7 @@
     <!-- Period 1 -->
     <ion-item>
       <ion-label>Period 1</ion-label>
-        <ion-select id="activity1" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity1" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -33,7 +33,7 @@
     <!-- Period 2 -->
     <ion-item>
       <ion-label>Period 2</ion-label>
-        <ion-select id="activity2" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity2" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -47,7 +47,7 @@
     <!-- Period 3 -->
     <ion-item>
       <ion-label>Period 3</ion-label>
-        <ion-select id="activity3" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity3" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -68,7 +68,7 @@
     <!-- Period 4 -->
     <ion-item>
       <ion-label>Period 4</ion-label>
-        <ion-select id="activity4" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity4" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -82,7 +82,7 @@
     <!-- Period 5 -->
     <ion-item>
       <ion-label>Period 5</ion-label>
-        <ion-select id="activity5" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity5" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -103,7 +103,7 @@
     <!-- Period 6 -->
     <ion-item>
       <ion-label>Period 6</ion-label>
-        <ion-select id="activity6" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity6" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -117,7 +117,7 @@
     <!-- Period 7 -->
     <ion-item>
       <ion-label>Period 7</ion-label>
-        <ion-select id="activity7" ok-text="Okay" cancel-text="Nah">
+        <ion-select id="activity7" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
           <ion-select-option value="dos">DOS</ion-select-option>
           <ion-select-option value="lunix">Linux</ion-select-option>
           <ion-select-option value="mac7">Mac OS 7</ion-select-option>
@@ -142,8 +142,8 @@
 
   <br>
 
-  <ion-button (click)="saveChoices()" expand="block"><ion-icon slot="start" name="save"></ion-icon>Save</ion-button>
-  <ion-button (click)="recoverChoices()" expand="block"><ion-icon slot="start" name="home"></ion-icon>Recover</ion-button>
+  <ion-button (click)="resetChoices()" expand="block"><ion-icon slot="start" name="refresh"></ion-icon>Reset choices</ion-button>
+  
   
 
   <p>Pick your daily schedule here and press save. I'll remember it for you!</p>

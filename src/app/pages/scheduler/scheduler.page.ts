@@ -26,6 +26,9 @@ export class SchedulerPage implements OnInit {
       console.log("Scheduler.app.ts:  Arts Camp has been selected");
       this.topText = "Good morning arts camper!";
     }
+
+    //recover previous activities chosen
+    this.recoverChoices();
   }
 
   setTopText(txt:string){
@@ -62,54 +65,84 @@ export class SchedulerPage implements OnInit {
 
   recoverChoices(){
 
-    // (document.getElementById("activity2") as HTMLSelectElement).selectedIndex = get("choice1");
-    // (document.getElementById("activity2") as HTMLSelectElement).selectedIndex = get("choice1");
-    // var choice3 = (document.getElementById("activity3") as HTMLSelectElement).selectedIndex;
-    // var choice4 = (document.getElementById("activity4") as HTMLSelectElement).selectedIndex;
-    // var choice5 = (document.getElementById("activity5") as HTMLSelectElement).selectedIndex;
-    // var choice6 = (document.getElementById("activity6") as HTMLSelectElement).selectedIndex;
-    // var choice7 = (document.getElementById("activity7") as HTMLSelectElement).selectedIndex;
-
     var choice1, choice2, choice3, choice4, choice5, choice6, choice7;
 
-  // (document.getElementById("activity1") as HTMLSelectElement).selectedIndex = result;
-
-    console.log("recoverChoices method:")
-
     get("choice1").then(
-      function(result) { choice1 = result; console.log("choice1:",choice1);},
-      function(error) { console.log("choice1: undefined"); }
+      function(result) { 
+        choice1 = result;
+        (document.getElementById("activity1") as HTMLSelectElement).value = choice1;
+      },
+      function(error) {  }
     );
 
     get("choice2").then(
-      function(result) { choice2 = result; console.log("choice2:",choice2);},
-      function(error) { console.log("choice2: undefined"); }
+      function(result) {
+        choice2 = result;
+        (document.getElementById("activity2") as HTMLSelectElement).value = choice2;
+      },
+      function(error) {  }
     );
 
     get("choice3").then(
-      function(result) { choice3 = result; console.log("choice3:",choice3);},
-      function(error) { console.log("choice3: undefined"); }
+      function(result) {
+        choice3 = result;
+        (document.getElementById("activity3") as HTMLSelectElement).value = choice3;
+      },
+      function(error) {  }
     );
 
     get("choice4").then(
-      function(result) { choice4 = result; console.log("choice4:",choice4);},
-      function(error) { console.log("choice4: undefined"); }
+      function(result) { 
+        choice4 = result;
+        (document.getElementById("activity4") as HTMLSelectElement).value = choice4;
+      },
+      function(error) {  }
     );
 
     get("choice5").then(
-      function(result) { choice5 = result; console.log("choice5:",choice5);},
-      function(error) { console.log("choice5: undefined"); }
+      function(result) {
+        choice5 = result;
+        (document.getElementById("activity5") as HTMLSelectElement).value = choice5;
+      },
+      function(error) {  }
     );
 
     get("choice6").then(
-      function(result) { choice6 = result; console.log("choice6:",choice6);},
-      function(error) { console.log("choice6: undefined"); }
+      function(result) {
+        choice6 = result;
+        (document.getElementById("activity6") as HTMLSelectElement).value = choice6;
+      },
+      function(error) {  }
     );
 
     get("choice7").then(
-      function(result) { choice7 = result; console.log("choice7:",choice7);},
-      function(error) { console.log("choice7: undefined"); }
+      function(result) {
+        choice7 = result;
+        (document.getElementById("activity7") as HTMLSelectElement).value = choice7;
+      },
+      function(error) {  }
     );
+
+    console.log("recoverChoices method:")
+    console.log("choice1:",choice1);
+    console.log("choice2:",choice2);
+    console.log("choice3:",choice3);
+    console.log("choice4:",choice4);
+    console.log("choice5:",choice5);
+    console.log("choice6:",choice6);
+    console.log("choice7:",choice7);
+  }
+
+  resetChoices(){
+    set("choice1",null);
+    set("choice2",null);
+    set("choice3",null);
+    set("choice4",null);
+    set("choice5",null);
+    set("choice6",null);
+    set("choice7",null);
+
+    this.recoverChoices();
   }
 }
 
