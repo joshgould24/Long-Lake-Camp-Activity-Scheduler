@@ -18,7 +18,12 @@ const routes: Routes = [
   {
     path: 'export',
     loadChildren: () => import('./pages/export/export.module').then( m => m.ExportPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule)
   }
+
 ];
 
 @NgModule({

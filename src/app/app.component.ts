@@ -17,7 +17,8 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Schedule', url: '/scheduler', icon: 'calendar' },
-    { title: 'Export data', url: '/export', icon: 'analytics' }
+    { title: 'Export data', url: '/export', icon: 'analytics' },
+    { title: 'Info', url: '/info', icon: 'help-circle' }
   ];
   
   constructor() {  }
