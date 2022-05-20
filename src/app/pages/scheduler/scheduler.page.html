@@ -15,11 +15,20 @@
 <ion-content>
   <p class="flex-center">{{topText}}</p>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Dingus :)</ion-label>
+  <!-- <mat-form-field>
+    <mat-select [formControl]="bankCtrl" placeholder="Bank" #singleSelect>
+      <mat-option>
+        
+        <ngx-mat-select-search [formControl]="bankFilterCtrl"></ngx-mat-select-search>
+      </mat-option>
+      <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
+        {{bank.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
 
-    </ion-item>
+  <ion-list>
+    
     <!-- Period 1 -->
     <ion-item>
       <ion-label>Period 1</ion-label>
@@ -139,9 +148,6 @@
       </div>
     </ion-item>
 
-    <!-- <ion-item>
-      <button onclick="console.log(SchedulerPage.hi())">Sample Text</button>
-    </ion-item> -->
   </ion-list>
 
   <br>

@@ -9,9 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { Storage } from '@capacitor/storage';//allows us to save variables to storage
 
-//for the searchable dropdown:
-//import { MatSelectModule } from '@angular/material';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+
+
 
 
 @NgModule({
@@ -20,9 +19,10 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule, 
-    //MatSelectModule, 
-    NgxMatSelectSearchModule
+    AppRoutingModule
+
+  ],
+  exports: [
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

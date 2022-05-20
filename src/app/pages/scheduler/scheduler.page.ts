@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from "src/app/app.component";
 import { Storage } from '@capacitor/storage';//allows us to save variables to storage
 
+//for the searchable dropdown:
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @Component({
   selector: 'app-scheduler',
   templateUrl: './scheduler.page.html',
