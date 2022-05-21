@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { Storage } from '@capacitor/storage';//allows us to save variables to storage
 
+import { Subject } from 'rxjs';
+
 
 
 
@@ -19,11 +21,10 @@ import { Storage } from '@capacitor/storage';//allows us to save variables to st
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule
-
+    AppRoutingModule,
+    
   ],
-  exports: [
-  ],
+  exports: [Subject],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

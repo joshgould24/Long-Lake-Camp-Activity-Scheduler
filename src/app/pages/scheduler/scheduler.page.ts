@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { Subject } from 'rxjs';
+
 @Component({
   selector: 'app-scheduler',
   templateUrl: './scheduler.page.html',
@@ -16,31 +18,41 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class SchedulerPage implements OnInit {
   
-  topText = "hmmmmmm";
+  topText = "Welcome";
 
-  constructor() { console.log("constructor."); }
+  constructor() {  }
   
   ngOnInit() {
-    if(AppComponent.getCamp() == null){
-      console.log("Scheduler.app.ts:  Camp not specified.");
-      this.topText = "Good morning camper!\nPlease select a camp in the side menu before in order to schedule your day. B)";
-    }
-    if(AppComponent.getCamp() == "adventure"){
-      console.log("Scheduler.app.ts:  Adventure Camp has been selected");
-      this.topText = "Good morning adventure camper!";
-    }
-    if(AppComponent.getCamp() == "art"){
-      console.log("Scheduler.app.ts:  Arts Camp has been selected");
-      this.topText = "Good morning arts camper!";
-    }
-
+    
+    // this method sets the personalised message
+    this.campSwitch();
+    
     //recover previous activities chosen
     this.recoverChoices();
+
+  }
+
+  campSwitch(){
+
+    switch(AppComponent.getCamp()){
+      case(null):
+        console.log("Scheduler.app.ts:  Camp not specified.");
+        this.topText = "Good morning camper!\nPlease select a camp in the side menu before in order to schedule your day. B)";
+        break;
+      case("adventure"):
+        console.log("Scheduler.app.ts:  Adventure Camp has been selected");
+        this.topText = "Good morning adventure camper!";
+        break;
+      case("art"):
+        console.log("Scheduler.app.ts:  Arts Camp has been selected");
+        this.topText = "Good morning arts camper!";
+    }
   }
 
   setTopText(txt:string){
     this.topText = txt;
   }
+  
 
   saveChoices(){
 
