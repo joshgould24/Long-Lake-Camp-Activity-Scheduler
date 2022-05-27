@@ -97,7 +97,7 @@ export class SchedulerPage implements OnInit {
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var mm = String(today.getMonth()).padStart(2, '0'); //January is 0!
 
     var shouldRecoverChoices = true;
 
@@ -107,81 +107,80 @@ export class SchedulerPage implements OnInit {
         if(result.getDate() < dd || result.getMonth() < mm){
           shouldRecoverChoices = false;
         }
+        if(shouldRecoverChoices){
+          console.log("Recovering choices made");
+    
+          var choice1, choice2, choice3, choice4, choice5, choice6, choice7;
+    
+          get("choice1").then(
+            function(result) { 
+              choice1 = result;
+              (document.getElementById("activity1") as HTMLSelectElement).value = choice1;
+            },
+            function(error) {  }
+          );
+    
+          get("choice2").then(
+            function(result) {
+              choice2 = result;
+              (document.getElementById("activity2") as HTMLSelectElement).value = choice2;
+            },
+            function(error) {  }
+          );
+    
+          get("choice3").then(
+            function(result) {
+              choice3 = result;
+              (document.getElementById("activity3") as HTMLSelectElement).value = choice3;
+            },
+            function(error) {  }
+          );
+    
+          get("choice4").then(
+            function(result) { 
+              choice4 = result;
+              (document.getElementById("activity4") as HTMLSelectElement).value = choice4;
+            },
+            function(error) {  }
+          );
+    
+          get("choice5").then(
+            function(result) {
+              choice5 = result;
+              (document.getElementById("activity5") as HTMLSelectElement).value = choice5;
+            },
+            function(error) {  }
+          );
+    
+          get("choice6").then(
+            function(result) {
+              choice6 = result;
+              (document.getElementById("activity6") as HTMLSelectElement).value = choice6;
+            },
+            function(error) {  }
+          );
+    
+          get("choice7").then(
+            function(result) {
+              choice7 = result;
+              (document.getElementById("activity7") as HTMLSelectElement).value = choice7;
+            },
+            function(error) {  }
+          );
+    
+          // console.log("choice1:",choice1);
+          // console.log("choice2:",choice2);
+          // console.log("choice3:",choice3);
+          // console.log("choice4:",choice4);
+          // console.log("choice5:",choice5);
+          // console.log("choice6:",choice6);
+          // console.log("choice7:",choice7);
+        }else{
+          console.log("Did not recover choices because they're from yesterday.");
+        }
       },
       function(error) { console.error("Error in choicesWereMadeToday method: " + error); }
     );
-
-    if(shouldRecoverChoices){
-      console.log("Recovering choices made");
-
-      var choice1, choice2, choice3, choice4, choice5, choice6, choice7;
-
-      get("choice1").then(
-        function(result) { 
-          choice1 = result;
-          (document.getElementById("activity1") as HTMLSelectElement).value = choice1;
-        },
-        function(error) {  }
-      );
-
-      get("choice2").then(
-        function(result) {
-          choice2 = result;
-          (document.getElementById("activity2") as HTMLSelectElement).value = choice2;
-        },
-        function(error) {  }
-      );
-
-      get("choice3").then(
-        function(result) {
-          choice3 = result;
-          (document.getElementById("activity3") as HTMLSelectElement).value = choice3;
-        },
-        function(error) {  }
-      );
-
-      get("choice4").then(
-        function(result) { 
-          choice4 = result;
-          (document.getElementById("activity4") as HTMLSelectElement).value = choice4;
-        },
-        function(error) {  }
-      );
-
-      get("choice5").then(
-        function(result) {
-          choice5 = result;
-          (document.getElementById("activity5") as HTMLSelectElement).value = choice5;
-        },
-        function(error) {  }
-      );
-
-      get("choice6").then(
-        function(result) {
-          choice6 = result;
-          (document.getElementById("activity6") as HTMLSelectElement).value = choice6;
-        },
-        function(error) {  }
-      );
-
-      get("choice7").then(
-        function(result) {
-          choice7 = result;
-          (document.getElementById("activity7") as HTMLSelectElement).value = choice7;
-        },
-        function(error) {  }
-      );
-
-      // console.log("choice1:",choice1);
-      // console.log("choice2:",choice2);
-      // console.log("choice3:",choice3);
-      // console.log("choice4:",choice4);
-      // console.log("choice5:",choice5);
-      // console.log("choice6:",choice6);
-      // console.log("choice7:",choice7);
-    }else{
-      console.log("Did not recover choices because they're from yesterday.");
-    }
   }
 
   resetChoices(){
