@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'another_test_app_angular',
+  appId: 'com.longlakecamp.activityplanner',
+  appName: 'Long Lake Camp App',
   webDir: 'www',
   bundledWebRuntime: false
 };
