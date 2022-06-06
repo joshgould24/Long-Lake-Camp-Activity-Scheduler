@@ -5,9 +5,9 @@
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-icon src="src/assets/icon6.png"></ion-icon>
-    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-icon src="src/assets/icon5.png"></ion-icon>
+    </ion-buttons> -->
     <ion-title>Activity Scheduler</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,31 +15,14 @@
 <ion-content>
   <p class="flex-center">{{topText}}</p>
 
-  <!-- <mat-form-field>
-    <mat-select [formControl]="bankCtrl" placeholder="Bank" #singleSelect>
-      <mat-option>
-        
-        <ngx-mat-select-search [formControl]="bankFilterCtrl"></ngx-mat-select-search>
-      </mat-option>
-      <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
-        {{bank.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field> -->
-
   <ion-list>
     
     <!-- Period 1 -->
     <ion-item>
       <ion-label>Period 1</ion-label>
         <ion-select id="activity1" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
@@ -47,13 +30,8 @@
     <ion-item>
       <ion-label>Period 2</ion-label>
         <ion-select id="activity2" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
@@ -61,13 +39,8 @@
     <ion-item>
       <ion-label>Period 3</ion-label>
         <ion-select id="activity3" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
   
@@ -82,13 +55,8 @@
     <ion-item>
       <ion-label>Period 4</ion-label>
         <ion-select id="activity4" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
@@ -96,13 +64,8 @@
     <ion-item>
       <ion-label>Period 5</ion-label>
         <ion-select id="activity5" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
@@ -117,13 +80,8 @@
     <ion-item>
       <ion-label>Period 6</ion-label>
         <ion-select id="activity6" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
@@ -131,13 +89,8 @@
     <ion-item>
       <ion-label>Period 7</ion-label>
         <ion-select id="activity7" (ionChange)="saveChoices();" ok-text="Okay" cancel-text="Nah">
-          <ion-select-option value="dos">DOS</ion-select-option>
-          <ion-select-option value="lunix">Linux</ion-select-option>
-          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
-          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
-          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
-          <ion-select-option value="win95">Windows 95</ion-select-option>
-          <ion-select-option value="win98">Windows 98</ion-select-option>
+          <ion-select-option *ngFor="let item of dropdownArray" value="{{item}}">
+            {{item}}</ion-select-option>
         </ion-select>
     </ion-item>
 
